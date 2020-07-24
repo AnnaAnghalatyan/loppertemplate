@@ -11,6 +11,7 @@ $orange: #F67110;
 $darkerBg: #30124E;
 $lightPurple: #776C82;
 
+$menuWidth: 250px;
 
 $headerGradient: linear-gradient(90deg, #5E239D 0%, rgba(196, 196, 196, 0) 56.77%);
 $purpleGradient: linear-gradient(180deg, rgba(49, 18, 81, 0) 0%, #30124E 80.07%);
@@ -172,7 +173,6 @@ html {
   font-style: normal;
 }
 
-// common using styles
 
 .pink {
   color: #F61067;
@@ -188,18 +188,34 @@ html {
   background-size: cover;
   background-position: center;
 
-  &__menu-overlay {
-    position: absolute;
+  &__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
     width: 100%;
+    background: transparent;
+    z-index: 10;
+    height: 100px;
+    transition: $transition;
+
+    &.purple {
+      background: $darkerBg;
+    }
+  }
+
+  &__menu-overlay {
+    position: fixed;
+    width: calc(100% - 250px);
     height: 100%;
     background: #000000bd;
-    z-index: 2;
+    z-index: 10;
     //left: 250px;
     left: -100%;
     transition: $transition;
 
     &.fade {
-      left: 250px
+      left: 249px
     }
   }
 
@@ -216,8 +232,9 @@ html {
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
+    //position: relative;
+    //z-index: 1;
+    padding-top: 200px;
   }
 
   &__logo {
@@ -231,7 +248,6 @@ html {
   &__menu {
     list-style: none;
     padding: 0;
-
 
     @include lg-less {
       //display: none !important;

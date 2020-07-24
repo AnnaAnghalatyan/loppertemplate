@@ -118,16 +118,28 @@ html {
   background-attachment: fixed;
   background-size: cover;
   background-position: center; }
-  .header__menu-overlay {
-    position: absolute;
+  .header__navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
     width: 100%;
+    background: transparent;
+    z-index: 10;
+    height: 100px;
+    transition: 0.3s ease; }
+    .header__navbar.purple {
+      background: #30124E; }
+  .header__menu-overlay {
+    position: fixed;
+    width: calc(100% - 250px);
     height: 100%;
     background: #000000bd;
-    z-index: 2;
+    z-index: 10;
     left: -100%;
     transition: 0.3s ease; }
     .header__menu-overlay.fade {
-      left: 250px; }
+      left: 249px; }
   .header__overlay {
     position: absolute;
     left: 0;
@@ -139,8 +151,7 @@ html {
     mix-blend-mode: multiply;
     z-index: 0; }
   .header__content {
-    position: relative;
-    z-index: 1; }
+    padding-top: 200px; }
   .header__logo {
     font-style: normal;
     font-weight: 900;
