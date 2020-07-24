@@ -164,7 +164,7 @@ html {
     @media (max-width: 991px) {
       .header__menu {
         position: fixed;
-        padding: 50px 20px 20px;
+        padding: 35px 20px 20px;
         width: 250px;
         left: -250px;
         top: 0;
@@ -176,6 +176,10 @@ html {
         transition: 0.3s ease; }
         .header__menu.toggled {
           left: 0; } }
+    @media (max-width: 575px) {
+      .header__menu {
+        width: 100%;
+        left: -100%; } }
   .header__menu-item {
     margin-left: 54px;
     display: inline-flex;
@@ -273,6 +277,10 @@ html {
     @media (max-width: 991px) {
       .header__toggler {
         display: block; } }
+    @media (max-width: 575px) {
+      .header__toggler {
+        position: relative;
+        z-index: 99; } }
     .header__toggler:focus {
       outline: none; }
 

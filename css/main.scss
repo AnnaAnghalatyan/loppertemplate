@@ -252,7 +252,7 @@ html {
     @include lg-less {
       //display: none !important;
       position: fixed;
-      padding: 50px 20px 20px;
+      padding: 35px 20px 20px;
       width: 250px;
       left: -250px;
       top: 0;
@@ -266,6 +266,13 @@ html {
       &.toggled {
         left: 0;
       }
+
+    }
+
+    @include sm-less {
+      width: 100%;
+      left: -100%;
+
     }
   }
 
@@ -406,6 +413,11 @@ html {
 
     @include lg-less {
       display: block;
+    }
+
+    @include sm-less {
+      position: relative;
+      z-index: 99;
     }
 
     &:focus {
