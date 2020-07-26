@@ -1,11 +1,11 @@
 const scrollBtn = document.getElementById('scroll-down');
-const menuToggler = document.querySelector('.header__toggler ');
-const overlay = document.querySelector('.header__menu-overlay');
-const menuLinks = [...document.querySelectorAll('.header__menu-link')];
-const navbar = document.querySelector('.header__navbar');
+const menuToggler = document.querySelector('.menu__toggler ');
+const menuLinks = [...document.querySelectorAll('.menu__link')];
+const navbar = document.querySelector('.menu__fixed');
 let menuClosed = true;
+const header = document.querySelector('.header');
 
-const menu = document.querySelector('.header__menu');
+const menu = document.querySelector('.menu__items');
 
 if (scrollBtn) scrollBtn.onclick = function (e) {
     const h = window.innerHeight;
@@ -14,31 +14,28 @@ if (scrollBtn) scrollBtn.onclick = function (e) {
 }
 
 window.addEventListener('scroll', function () {
-    this.scrollY > 100 ?
-        navbar.classList.add('purple') :
+    if(this.scrollY > 100) {
+       navbar.classList.add('purple')
+    } else {
         navbar.classList.remove('purple')
-
+    }
 })
 
 function openMenu() {
     menuClosed = false;
     menu.classList.add('toggled');
-    document.body.classList.add('scroll-off');
-    overlay.classList.add('fade')
+    menuToggler.classList.add('white')
 }
 
 function closeMenu() {
     menuClosed = true;
     menu.classList.remove('toggled');
-    document.body.classList.remove('scroll-off');
-    overlay.classList.remove('fade')
+    menuToggler.classList.remove('white')
 }
 
 if(menuToggler) menuToggler.onclick = function (e) {
     menuClosed ? openMenu() : closeMenu();
 }
-
-if(overlay) overlay.onclick = () => closeMenu()
 
 if(menuLinks) menuLinks.forEach(link => link.addEventListener('click', function () {
     closeMenu();
