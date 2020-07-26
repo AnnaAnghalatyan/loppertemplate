@@ -487,7 +487,9 @@ html {
           left: 80%; } }
       @media (max-width: 575px) {
         .faces__sm_2 {
-          left: 100%; } }
+          left: 100%;
+          width: 50px;
+          height: 50px; } }
     .faces__sm_3 {
       width: 77px;
       height: 77px;
@@ -500,8 +502,8 @@ html {
         .faces__sm_3 {
           bottom: 0;
           left: 10px;
-          width: 70px;
-          height: 70px; } }
+          width: 50px;
+          height: 50px; } }
     .faces__sm_4 {
       width: 66px;
       height: 66px;
@@ -519,6 +521,10 @@ html {
       height: 80px;
       bottom: 50%;
       right: 50%; }
+      @media (max-width: 575px) {
+        .faces__sm_5 {
+          width: 40px;
+          height: 40px; } }
     .faces__sm_6 {
       width: 50px;
       height: 50px;
