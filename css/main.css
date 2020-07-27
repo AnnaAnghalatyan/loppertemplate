@@ -938,4 +938,35 @@ html {
 .overlayed_pink:before {
   background-color: #F61067; }
 
+@keyframes type {
+  0% {
+    width: 0ch; }
+  100% {
+    width: 12ch;
+    border-right: 4px solid #F61067; } }
+@keyframes type2 {
+  0% {
+    width: 0ch; }
+  100% {
+    width: 7ch; } }
+.test {
+  display: inline-block;
+  animation: type 1.2s steps(12);
+  animation-delay: 0.7s;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 12ch;
+  animation-fill-mode: backwards; }
+  @media (max-width: 575px) {
+    .test {
+      font-size: 30px; } }
+
+.test2 {
+  animation-fill-mode: backwards;
+  display: block;
+  animation: type2 0.7s steps(7);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 7ch; }
+
 /*# sourceMappingURL=main.css.map */
