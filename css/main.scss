@@ -321,6 +321,7 @@ html {
     line-height: 30px;
     letter-spacing: 2px;
     color: $white;
+    
   }
 
   &__toggler {
@@ -352,7 +353,7 @@ html {
     color: $darker;
 
     .menu__link {
-      @include lg {
+      @include md {
         color: $darker;
       }
     }
@@ -363,14 +364,14 @@ html {
 
     .menu__item {
       &:after {
-        @include lg {
+        @include md {
           background-color: $darker;
         }
       }
 
       &_contact {
         &:before {
-          @include lg {
+          @include md {
             background-image: url("../img/icons/phone-dark.svg");
           }
         }
@@ -1295,7 +1296,94 @@ html {
 }
 
 .team-intro {
+  background: url('../img/team/team.jpg') no-repeat;
+}
 
+.team-headings {
+  padding: 100px 0;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  color: $darker;
+}
+
+.team-content {
+  padding: 100px 0;
+  position: relative;
+
+  @include md-less {
+    padding: 0 0 100px 0;
+  }
+
+  &:before {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 215px;
+    background: $blueBg;
+
+    @include md-less {
+      top: 140px;
+    }
+  }
+  &__item {
+    text-align: center;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__social {
+    max-width: 150px;
+    margin: 20px auto 0;
+  }
+  &__link {
+    width: 22px;
+
+    &_tw {
+      height: 15px;
+      background: url("../img/icons/twitter-blue.svg") no-repeat;
+    }
+
+    &_s1 {
+      height: 20px;
+      background: url("../img/icons/social1.svg") no-repeat;
+    }
+
+    &_s2 {
+      height: 18px;
+      background: url("../img/icons/social2.svg") no-repeat;
+    }
+  }
+
+  &__image {
+    width: 262px;
+    height: 262px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include md-less {
+      width: 220px;
+      height: 220px;
+    }
+  }
+
+  &__name {
+    font-size: 21.6px;
+    margin-top: 10px;
+  }
+
+  &__position {
+    font-size: 12.6px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.5;
+  }
 }
 
 
