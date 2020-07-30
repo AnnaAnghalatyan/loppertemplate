@@ -425,8 +425,7 @@ html {
   }
 
   &__content {
-    //position: relative;
-    //z-index: 1;
+
     padding-top: 200px;
   }
 
@@ -464,8 +463,9 @@ html {
     transform: rotate(90deg);
     cursor: pointer;
     position: absolute;
-    right: -10%;
-    top: 50%;
+    right: 0;
+    top: 378px;
+    z-index: 3;
 
     @include sm-less {
       right: -120px;

@@ -296,8 +296,9 @@ html {
     transform: rotate(90deg);
     cursor: pointer;
     position: absolute;
-    right: -10%;
-    top: 50%; }
+    right: 0;
+    top: 378px;
+    z-index: 3; }
     @media (max-width: 575px) {
       .header__scroll {
         right: -120px; } }
