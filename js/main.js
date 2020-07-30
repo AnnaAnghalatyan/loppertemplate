@@ -21,6 +21,32 @@ window.addEventListener('scroll', function () {
     }
 })
 
+function typingTextAnimation() {
+    let text1 = "We grow";
+    let text2 = "great business";
+    const text1Block = document.getElementById('text1');
+    const text2Block = document.getElementById('text2');
+
+
+    function InsertLetters(block, initialText) {
+        let text = '';
+        let interval = setInterval(function () {
+            text += initialText.charAt(text.length);
+            block.innerHTML = text;
+            if(text.length === initialText.length) clearInterval(interval)
+        }, 120)
+
+    }
+    InsertLetters(text1Block, text1);
+    setTimeout(function () {
+        InsertLetters(text2Block, text2);
+    }, text1.length * 120)
+}
+
+window.onload = function () {
+    typingTextAnimation()
+}
+
 function openMenu() {
     menuClosed = false;
     menu.classList.add('toggled');
